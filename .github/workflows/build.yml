@@ -1,5 +1,57 @@
-on: [push, pull_request, workflow_dispatch]
+on: [push, workflow_dispatch]
 
 jobs:
   build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3-branch
+    runs-on: ubuntu-latest
+    container:
+      image: zmkfirmware/zmk-build-arm:3.5
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - shield: roBa_R
+            artifact: roBa_R-seeeduino_xiao_ble-zmk
+          - shield: roBa_L
+            artifact: roBa_L-seeeduino_xiao_ble-zmk
+          - shield: settings_reset
+            artifact: settings_reset-seeeduino_xiao_ble-zmk
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          path: zmk-config
+
+      - name: Cache west modules
+        uses: actions/cache@v4
+        with:
+          path: |
+            modules/
+            tools/
+            zephyr/
+            bootloader/
+            zmk/
+          key: ${{ runner.os }}-west-${{ hashFiles('zmk-config/config/west.yml') }}
+          restore-keys: ${{ runner.os }}-west-
+
+      - name: West Init
+        run: west init -l zmk-config/config
+
+      - name: West Update
+        run: west update
+
+      - name: West Zephyr Export
+        run: west zephyr-export
+
+      - name: Build ${{ matrix.shield }}
+        run: |
+          west build -s zmk/app -b seeeduino_xiao_ble -- \
+            -DZMK_CONFIG="${GITHUB_WORKSPACE}/zmk-config/config" \
+            -DSHIELD="${{ matrix.shield }}" \
+            -DZMK_EXTRA_MODULES="${GITHUB_WORKSPACE}/zmk-config"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact }}
+          path: build/zephyr/zmk.uf2
