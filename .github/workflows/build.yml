@@ -4,54 +4,68 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: zmkfirmware/zmk-build-arm:3.5
+      image: zmkfirmware/zmk-build-arm:stable
     strategy:
       fail-fast: false
       matrix:
         include:
-          - shield: roBa_R
+          - board: seeeduino_xiao_ble
+            shield: roBa_R
             artifact: roBa_R-seeeduino_xiao_ble-zmk
-          - shield: roBa_L
+          - board: seeeduino_xiao_ble
+            shield: roBa_L
             artifact: roBa_L-seeeduino_xiao_ble-zmk
-          - shield: settings_reset
+          - board: seeeduino_xiao_ble
+            shield: settings_reset
             artifact: settings_reset-seeeduino_xiao_ble-zmk
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          path: zmk-config
+
+      - name: Prepare build dir
+        run: echo "build_dir=$(mktemp -d)" >> $GITHUB_ENV
+
+      - name: Copy config to temp dir
+        run: |
+          mkdir -p /tmp/zmk-config/config
+          cp -R config/* /tmp/zmk-config/config/
 
       - name: Cache west modules
         uses: actions/cache@v4
+        continue-on-error: true
         with:
           path: |
-            modules/
-            tools/
-            zephyr/
-            bootloader/
-            zmk/
-          key: ${{ runner.os }}-west-${{ hashFiles('zmk-config/config/west.yml') }}
+            /tmp/zmk-config/modules/
+            /tmp/zmk-config/tools/
+            /tmp/zmk-config/zephyr/
+            /tmp/zmk-config/bootloader/
+            /tmp/zmk-config/zmk/
+          key: ${{ runner.os }}-west-${{ hashFiles('**/west.yml') }}
           restore-keys: ${{ runner.os }}-west-
 
       - name: West Init
-        run: west init -l zmk-config/config
+        working-directory: /tmp/zmk-config
+        run: west init -l /tmp/zmk-config/config
 
       - name: West Update
-        run: west update
+        working-directory: /tmp/zmk-config
+        run: west update --fetch-opt=--filter=tree:0
 
       - name: West Zephyr Export
+        working-directory: /tmp/zmk-config
         run: west zephyr-export
 
       - name: Build ${{ matrix.shield }}
+        working-directory: /tmp/zmk-config
         run: |
-          west build -s zmk/app -b seeeduino_xiao_ble -- \
-            -DZMK_CONFIG="${GITHUB_WORKSPACE}/zmk-config/config" \
+          west build -s zmk/app -d "${{ env.build_dir }}" -b "${{ matrix.board }}" -- \
+            -DZMK_CONFIG=/tmp/zmk-config/config \
             -DSHIELD="${{ matrix.shield }}" \
-            -DZMK_EXTRA_MODULES="${GITHUB_WORKSPACE}/zmk-config"
+            -DZMK_EXTRA_MODULES="${GITHUB_WORKSPACE}"
 
-      - name: Upload artifact
+      - name: Upload ${{ matrix.shield }}
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.artifact }}
-          path: build/zephyr/zmk.uf2
+          path: ${{ env.build_dir }}/zephyr/zmk.uf2
