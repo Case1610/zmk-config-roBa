@@ -34,8 +34,8 @@ layers:
   - MINUS
   - N
   - M
-  - DOT
   - COMMA
+  - DOT
   - t: SLASH
     h: RIGHT_SHIFT
   - LCTRL
