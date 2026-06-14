@@ -461,9 +461,12 @@ layers:
   - t: ▽
     type: trans
   - BT BT_CLR_ALL
-  - '&kb_s1 Password3'
-  - '&kb_s2 1610likeKoko'
-  - '&kb_s3 Case1610'
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
   - t: ▽
     type: trans
   - t: ▽
