@@ -472,8 +472,8 @@ layers:
   - t: ▽
     type: trans
   - NUMBER_1
-  - NUMBER_2
   - NUMBER_3
+  - NUMBER_2
   - t: ▽
     type: trans
   - t: ▽
