@@ -115,8 +115,7 @@ layers:
   - AMPS
   - STAR
   - LPAR
-  - t: ▽
-    type: trans
+  - RPAR
   - PLUS
   - DQT
   - LPAR
@@ -124,23 +123,23 @@ layers:
   - BSPC
   - TAB
   - DLLR
-  - PRCNT
-  - CARET
-  - RBRC
-  - t: ▽
-    type: trans
+  - LS(EQUAL)
+  - RBKT
+  - BSLH
+  - DQT
   - UNDER
-  - UNDER
+  - LS(MINUS)
   - DLLR
   - PRCNT
   - AMPS
   - ENTER
   - LEFT_SHIFT
-  - DQT
+  - t: INT_RO
+    h: LEFT_SHIFT
   - PIPE
-  - BSLH
   - LBRC
-  - RBKT
+  - RBRC
+  - CARET
   - LBKT
   - SQT
   - EXCL

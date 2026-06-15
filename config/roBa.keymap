@@ -86,9 +86,9 @@
 
         SYM {
             bindings = <
-            &kp ESC &kp AMPS &kp STAR &kp LPAR &trans &kp PLUS &kp DQT &kp LPAR &kp RPAR &kp BSPC
-            &kp TAB &kp DLLR &kp PRCNT &kp CARET &kp RBRC &trans &kp UNDER &kp UNDER &kp DLLR &kp PRCNT
-            &kp AMPS &kp ENTER &kp LEFT_SHIFT &kp DQT &kp PIPE &kp BSLH &kp LBRC &kp RBKT &kp LBKT &kp SQT
+            &kp ESC &kp AMPS &kp STAR &kp LPAR &kp RPAR &kp PLUS &kp DQT &kp LPAR &kp RPAR &kp BSPC
+            &kp TAB &kp DLLR &kp LS(EQUAL) &kp RBKT &kp BSLH &kp DQT &kp UNDER &kp LS(MINUS) &kp DLLR &kp PRCNT
+            &kp AMPS &kp ENTER &kp LEFT_SHIFT &mt LEFT_SHIFT INT_RO &kp PIPE &kp LBRC &kp RBRC &kp CARET &kp LBKT &kp SQT
             &kp EXCL &kp DOUBLE_QUOTES &kp HASH &kp RSHFT &trans &trans &trans &trans &trans &trans
             &trans &trans &kp RCTRL
             >;
