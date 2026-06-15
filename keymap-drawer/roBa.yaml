@@ -55,11 +55,10 @@ layers:
     h: L6
   NUM:
   - ESC
-  - t: ▽
-    type: trans
   - F10
   - F11
   - F12
+  - HOME
   - DEL
   - N7
   - N8
@@ -119,7 +118,7 @@ layers:
   - t: ▽
     type: trans
   - PLUS
-  - EQUAL
+  - DQT
   - LPAR
   - RPAR
   - BSPC
@@ -128,9 +127,10 @@ layers:
   - PRCNT
   - CARET
   - RBRC
-  - RBKT
-  - A
-  - LBKT
+  - t: ▽
+    type: trans
+  - UNDER
+  - UNDER
   - DLLR
   - PRCNT
   - AMPS
@@ -140,9 +140,8 @@ layers:
   - PIPE
   - BSLH
   - LBRC
-  - t: ▽
-    type: trans
-  - UNDER
+  - RBKT
+  - LBKT
   - SQT
   - EXCL
   - DOUBLE_QUOTES
