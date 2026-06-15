@@ -76,8 +76,8 @@
         NUM {
             bindings = <
             &kp ESC &kp F10 &kp F11 &kp F12 &kp HOME &kp DEL &kp N7 &kp N8 &kp N9 &kp BSPC
-            &kp TAB &kp F6 &kp F7 &kp F8 &kp F9 &trans &trans &kp INT_YEN &kp N4 &kp N5
-            &kp N6 &kp ENTER &kp LSHFT &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &trans &lt 1 N0
+            &kp TAB &kp F6 &kp F7 &kp F8 &kp F9 &trans &kp A &kp INT_YEN &kp N4 &kp N5
+            &kp N6 &kp ENTER &kp LSHFT &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &Dzero 00 &lt 1 N0
             &kp N1 &kp N2 &kp N3 &kp RSHFT &trans &trans &trans &trans &trans &trans
             &trans &trans &trans
             >;
@@ -86,10 +86,10 @@
 
         SYM {
             bindings = <
-            &kp ESC &kp AMPS &kp STAR &kp LPAR &kp RPAR &kp PLUS &kp DQT &kp LPAR &kp RPAR &kp BSPC
-            &kp TAB &kp DLLR &kp LS(EQUAL) &kp RBKT &kp BSLH &kp DQT &kp UNDER &kp LS(MINUS) &kp DLLR &kp PRCNT
-            &kp AMPS &kp ENTER &kp LEFT_SHIFT &mt LEFT_SHIFT INT_RO &kp PIPE &kp LBRC &kp RBRC &kp CARET &kp LBKT &kp SQT
-            &kp EXCL &kp DOUBLE_QUOTES &kp HASH &kp RSHFT &trans &trans &trans &trans &trans &trans
+            &kp ESC    &kp LS(N6)    &kp LS(SQT)  &kp LS(N8)      &kp LS(N9)    &kp LS(SEMI) &kp LS(N2)   &kp LS(N8)   &kp LS(N9)   &kp BSPC
+            &kp TAB    &kp DLLR      &kp LS(SEMI) &kp NUHS         &kp INT_YEN   &kp LS(N2)   &kp LS(INT_RO) &kp LS(MINUS) &kp DLLR   &kp PRCNT
+            &kp LS(N6) &kp ENTER     &kp LEFT_SHIFT &mt LEFT_SHIFT INT_RO &kp LS(INT_YEN) &kp LS(RBKT) &kp LS(NUHS) &kp EQUAL &kp RBKT &kp LS(N7)
+            &kp EXCL   &kp LS(N2)    &kp HASH     &kp RSHFT        &trans        &trans       &trans       &trans       &trans       &trans
             &trans &trans &kp RCTRL
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
