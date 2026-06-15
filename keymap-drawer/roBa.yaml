@@ -41,15 +41,15 @@ layers:
   - LCTRL
   - LEFT_WIN
   - LEFT_ALT
-  - t: GRAVE
+  - t: CLCK
     h: L3
-  - t: INT_MUHENKAN
+  - t: LANG2
     h: L2
   - t: SPACE
     h: L1
   - t: SPACE
     h: L1
-  - t: INT_HENKAN
+  - t: LANG1
     h: L2
   - t: INT_KANA
     h: L6
@@ -71,8 +71,7 @@ layers:
   - F9
   - t: ▽
     type: trans
-  - t: ▽
-    type: trans
+  - LS(MINUS)
   - INT_YEN
   - N4
   - N5
@@ -84,8 +83,7 @@ layers:
   - F3
   - F4
   - F5
-  - t: ▽
-    type: trans
+  - COMMA
   - t: N0
     h: L1
   - N1
@@ -112,38 +110,38 @@ layers:
     type: trans
   SYM:
   - ESC
-  - AMPS
-  - STAR
-  - LPAR
-  - RPAR
-  - PLUS
-  - DQT
-  - LPAR
-  - RPAR
+  - LS(N8)
+  - LS(N9)
+  - LS(SEMI)
+  - EQUAL
+  - LS(SQT)
+  - LS(N7)
+  - LS(N8)
+  - LS(N9)
   - BSPC
   - TAB
-  - DLLR
-  - LS(EQUAL)
   - RBKT
-  - BSLH
-  - DQT
-  - UNDER
+  - NUHS
+  - LS(COMMA)
+  - LS(DOT)
+  - t: ▽
+    type: trans
   - LS(MINUS)
+  - LS(EQUAL)
   - DLLR
   - PRCNT
-  - AMPS
+  - LS(N6)
   - ENTER
   - LEFT_SHIFT
-  - t: INT_RO
-    h: LEFT_SHIFT
-  - PIPE
-  - LBRC
-  - RBRC
-  - CARET
+  - LS(RBKT)
+  - LS(NUHS)
+  - LS(INT_YEN)
+  - LS(N3)
+  - LS(N1)
   - LBKT
-  - SQT
+  - LS(INT_RO)
   - EXCL
-  - DOUBLE_QUOTES
+  - LS(N2)
   - HASH
   - RSHFT
   - t: ▽
@@ -168,49 +166,37 @@ layers:
   - LC(LS(TAB))
   - UP_ARROW
   - LC(TAB)
-  - t: ▽
-    type: trans
-  - t: ▽
-    type: trans
-  - t: ▽
-    type: trans
-  - t: ▽
-    type: trans
-  - t: ▽
-    type: trans
-  - t: ▽
-    type: trans
+  - LG(D)
+  - LG(TAB)
+  - LC(LG(LEFT))
+  - LC(LG(RIGHT))
+  - LG(UP)
+  - LG(DOWN)
   - TAB
   - LEFT
-  - DOWN
+  - LG(LS(TAB))
   - RIGHT
-  - t: ▽
-    type: trans
+  - LG(V)
   - t: ▽
     type: trans
   - PAGE_UP
-  - t: ▽
-    type: trans
-  - t: ▽
-    type: trans
+  - LA(F4)
+  - LG(E)
   - UP_ARROW
-  - t: ▽
-    type: trans
-  - t: ▽
-    type: trans
+  - LC(Z)
+  - LC(Y)
   - LEFT_SHIFT
   - LG(LS(LEFT_ARROW))
-  - t: ▽
-    type: trans
+  - DOWN
   - LG(LS(RIGHT_ARROW))
   - END
   - HOME
   - PAGE_DOWN
-  - t: ▽
-    type: trans
+  - LC(A)
   - LEFT_ARROW
   - DOWN_ARROW
   - RIGHT_ARROW
+  - LC(BSPC)
   - t: ▽
     type: trans
   - t: ▽
@@ -227,10 +213,7 @@ layers:
     type: trans
   - t: ▽
     type: trans
-  - t: ▽
-    type: trans
-  - t: ▽
-    type: trans
+  - LC(W)
   MOUSE:
   - t: ▽
     type: trans
@@ -267,8 +250,7 @@ layers:
     type: trans
   - t: ▽
     type: trans
-  - t: ▽
-    type: trans
+  - '&mkp MB4'
   - '&mkp MB1'
   - '&mkp MB3'
   - '&mkp MB2'
@@ -288,8 +270,7 @@ layers:
     type: trans
   - t: ▽
     type: trans
-  - t: ▽
-    type: trans
+  - '&mkp MB5'
   - t: ▽
     type: trans
   - t: ▽
@@ -404,14 +385,10 @@ layers:
   - t: ▽
     type: trans
   BT:
-  - t: ▽
-    type: trans
-  - t: ▽
-    type: trans
-  - t: ▽
-    type: trans
-  - t: ▽
-    type: trans
+  - '&out OUT_USB'
+  - '&out OUT_BLE'
+  - '&out OUT_TOG'
+  - '&sys_reset'
   - t: ▽
     type: trans
   - t: BT
@@ -424,18 +401,12 @@ layers:
     h: '3'
   - t: BT
     h: '4'
-  - t: ▽
-    type: trans
-  - t: ▽
-    type: trans
-  - t: ▽
-    type: trans
-  - t: ▽
-    type: trans
-  - t: ▽
-    type: trans
-  - t: ▽
-    type: trans
+  - C_VOL_DN
+  - C_VOL_UP
+  - C_MUTE
+  - C_PP
+  - C_NEXT
+  - C_PREV
   - BT BT_CLR
   - t: ▽
     type: trans
