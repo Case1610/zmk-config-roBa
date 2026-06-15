@@ -36,6 +36,7 @@
             bindings = <&kp EQUAL>;
             key-positions = <24 25>;
         };
+
     };
 
     macros {
@@ -58,8 +59,8 @@
 
     };
 
-    keymap {
-        compatible = "zmk,keymap";
+        keymap {
+            compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
@@ -134,5 +135,6 @@
             &trans &bootloader &trans
             >;
         };
+
     };
 };
