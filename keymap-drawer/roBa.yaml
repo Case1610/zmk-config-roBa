@@ -43,13 +43,13 @@ layers:
   - LEFT_ALT
   - t: CLCK
     h: L3
-  - t: LANG2
+  - t: INT_MUHENKAN
     h: L2
   - t: SPACE
     h: L1
   - t: SPACE
     h: L1
-  - t: LANG1
+  - t: INT_HENKAN
     h: L2
   - t: INT_KANA
     h: L6
@@ -136,7 +136,7 @@ layers:
   - LS(RBKT)
   - LS(NUHS)
   - LS(INT_YEN)
-  - LS(N3)
+  - SQT
   - LS(N1)
   - LBKT
   - LS(INT_RO)
@@ -174,7 +174,7 @@ layers:
   - LG(DOWN)
   - TAB
   - LEFT
-  - LG(LS(TAB))
+  - LG(TAB)
   - RIGHT
   - LG(V)
   - t: ▽
