@@ -84,12 +84,12 @@ layers:
   - F4
   - F5
   - COMMA
-  - t: N0
-    h: L1
+  - N0
   - N1
   - N2
   - N3
-  - RSHFT
+  - t: N0
+    h: LEFT_SHIFT
   - t: ▽
     type: trans
   - t: ▽
