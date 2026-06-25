@@ -169,7 +169,7 @@ layers:
   - LG(D)
   - LG(TAB)
   - LC(LG(LEFT))
-  - LC(LG(RIGHT))
+  - MB3
   - LG(UP)
   - LG(DOWN)
   - TAB
@@ -181,9 +181,9 @@ layers:
     type: trans
   - PAGE_UP
   - LA(F4)
-  - LG(E)
+  - MB1
   - UP_ARROW
-  - LC(Z)
+  - MB2
   - LC(Y)
   - LEFT_SHIFT
   - LG(LS(LEFT_ARROW))
