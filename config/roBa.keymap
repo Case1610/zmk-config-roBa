@@ -71,7 +71,7 @@
             &kp M &kp COMMA &kp DOT &mt RIGHT_SHIFT SLASH &kp LCTRL &kp LEFT_WIN &kp LEFT_ALT &lt 3 CLCK &lt 2 INT_MUHENKAN &lt 1 SPACE
             &lt 1 SPACE &lt 2 INT_HENKAN &lt 6 INT_KANA
             >;
-            sensor-bindings = <&inc_dec_msc SCRL_DOWN SCRL_UP>;
+            sensor-bindings = <&inc_dec_kp DOWN UP>;
         };
 
         NUM {
@@ -104,7 +104,7 @@
             &kp LEFT_ARROW &kp DOWN_ARROW &kp RIGHT_ARROW &kp LC(BSPC) &trans &trans &trans &trans &trans &trans
             &trans &trans &kp LC(W)
             >;
-            sensor-bindings = <&inc_dec_msc SCRL_DOWN SCRL_UP>;
+            sensor-bindings = <&inc_dec_kp DOWN UP>;
         };
 
         MOUSE {
