@@ -10,7 +10,7 @@
 };
 
 &trackball {
-    automouse-layer = <4>;
+    // automouse is handled by zip_temp_layer in roBa_R.overlay
     scroll-layers = <5>;
 };
 
