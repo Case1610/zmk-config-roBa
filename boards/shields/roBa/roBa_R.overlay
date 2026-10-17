@@ -1,4 +1,5 @@
 #include "roBa.dtsi"
+#include <input/processors.dtsi>
 
 &default_transform {
     col-offset = <6>;
@@ -19,7 +20,18 @@
         status = "okay";
         compatible = "zmk,input-listener";
         device = <&trackball>;
+        // Auto mouse layer (layer 4), off 400ms after the ball stops
+        input-processors = <&zip_temp_layer 4 400>;
     };
+};
+
+&zip_temp_layer {
+    // Don't enter the mouse layer within 500ms of a key press (typing jiggle)
+    require-prior-idle-ms = <500>;
+    // Keys that keep the mouse layer on; any other key turns it off at once.
+    // 7: scroll (mo 5), 17-20 / 29: mouse buttons,
+    // 22 / 33: shift (mt), 34-36: Ctrl / Win / Alt
+    excluded-positions = <7 17 18 19 20 22 29 33 34 35 36>;
 };
 
 &pinctrl {
