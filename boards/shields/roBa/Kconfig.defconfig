@@ -1,3 +1,4 @@
+# Right half: peripheral (the dongle is now the central)
 if SHIELD_ROBA_R
 
 config ZMK_KEYBOARD_NAME
@@ -6,17 +7,29 @@ config ZMK_KEYBOARD_NAME
 config ZMK_SPLIT
     default y
 
-config ZMK_SPLIT_ROLE_CENTRAL
-    default y
-
 endif
 
+# Left half: peripheral (unchanged)
 if SHIELD_ROBA_L
 
 config ZMK_KEYBOARD_NAME
     default "roBa_L"
 
 config ZMK_SPLIT
+    default y
+
+endif
+
+# Dongle (XIAO BLE plugged into the PC): the central
+if SHIELD_ROBA_DONGLE
+
+config ZMK_KEYBOARD_NAME
+    default "roBa"
+
+config ZMK_SPLIT
+    default y
+
+config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
 endif

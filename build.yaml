@@ -23,4 +23,6 @@ include:
  - board: seeeduino_xiao_ble
    shield: roBa_L
  - board: seeeduino_xiao_ble
+   shield: roBa_dongle
+ - board: seeeduino_xiao_ble
    shield: settings_reset

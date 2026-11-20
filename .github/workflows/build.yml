@@ -11,8 +11,11 @@ jobs:
         include:
           - board: seeeduino_xiao_ble
             shield: roBa_R
-            snippet: studio-rpc-usb-uart
             artifact: roBa_R-seeeduino_xiao_ble-zmk
+          - board: seeeduino_xiao_ble
+            shield: roBa_dongle
+            snippet: studio-rpc-usb-uart
+            artifact: roBa_dongle-seeeduino_xiao_ble-zmk
           - board: seeeduino_xiao_ble
             shield: roBa_L
             artifact: roBa_L-seeeduino_xiao_ble-zmk
